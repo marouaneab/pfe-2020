@@ -13,11 +13,17 @@ import { MatListModule } from '@angular/material/list';
 import {FormsModule} from '@angular/forms';
 import {AngularFireModule} from '@angular/fire';
 import {environment} from '../environments/environment';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { AngularFirestoreModule } from '@angular/fire/firestore';
+import { AngularFireAuthModule } from '@angular/fire/auth';
+import { AngularFireStorageModule } from '@angular/fire/storage';
+import { SuperSecretComponent } from './super-secret/super-secret.component';
 
 @NgModule({
     declarations: [
         AppComponent,
         DashboardComponent,
+        SuperSecretComponent
     ],
     imports: [
         BrowserModule,
@@ -35,8 +41,12 @@ import {environment} from '../environments/environment';
         MatBadgeModule,
         AngularFireModule.initializeApp(environment.firebase),
         MatTreeModule,
-        MatExpansionModule
-    ],
+        MatExpansionModule,
+        HttpClientModule,
+        AngularFirestoreModule,
+        AngularFireAuthModule,
+        AngularFireStorageModule
+        ],
     providers: [],
     bootstrap: [AppComponent]
 })
